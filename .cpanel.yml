@@ -1,0 +1,5 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/lingufra/public_html
+    - /bin/mkdir -p $DEPLOYPATH
+    - /usr/bin/rsync -av --delete --exclude='.git' --exclude='.github' --exclude='.env' --exclude='vendor' --exclude='node_modules' ./ $DEPLOYPATH/
